@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-stacktrace: always
+
+spring:
+  application:
+    name: customer-profile-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customers
+    username: postgres
+    password: Nw_Pg_Pr0d!2023
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    env:
+      show-values: always
+
+logging:
+  file:
+    name: logs/customer-profile-service.log
+  level:
+    root: INFO
+    com.northwind: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE

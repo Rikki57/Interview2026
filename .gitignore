@@ -1,0 +1,17 @@
+# Build output
+/build/
+out/
+*.class
+*.jar
+
+# IDE
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local
+*.local.md
+/.idea/
